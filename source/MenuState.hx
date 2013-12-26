@@ -17,6 +17,13 @@ class MenuState extends FlxState {
 		
 		FlxG.autoPause = false;
 		
+		var title:FlxSprite = new FlxSprite( 0, 10 );
+		title.loadGraphic( "images/title.png", true, false, 164, 42 );
+		title.x = ( FlxG.width - title.width ) / 2;
+		title.animation.add( "idle", [0, 1, 2, 3], 6, true );
+		title.animation.play( "idle" );
+		add( title );
+		
 		var clickToPlay:FlxText = new FlxText( 0, 0, FlxG.width, "Click to Play" );
 		clickToPlay.setFormat( "frucade" );
 		clickToPlay.alignment = "center";

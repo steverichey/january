@@ -1,10 +1,14 @@
 # January
 
-This is a port and update of January, originally created by Disasterpeace aka Richard Vreeland. This version was written in Haxe by STVR (Steve Richey) and uses the OpenFL and HaxeFlixel libraries.
+This is a port and update of [January](http://january.cc/), originally created by [Disasterpeace](http://disasterpeace.com/) aka [Richard Vreeland](http://www.richvreeland.com/). This version was written in Haxe by [STVR](https://twitter.com/stvr_tweets) ([Steve Richey](http://www.steverichey.com/)) and uses the [OpenFL](http://www.openfl.org/) and [HaxeFlixel](http://haxeflixel.com/) libraries.
 
 ## Changes:
 
-* Made in FlashDevelop (free, open-source) instead of FlashBuilder (not free, not open-source).
+* Made in [FlashDevelop](http://www.flashdevelop.org/) (free, open source) instead of FlashBuilder.
+* Written in [Haxe](http://haxe.org/) (open source) instead of ActionScript.
+* Thanks to OpenFL and Haxe, this version of January is cross-platform.
+* Trees, mountain, and ground texture is randomized.
+* Fullscreen support.
 
 ## Original Readme:
 

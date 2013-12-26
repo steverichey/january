@@ -1,6 +1,6 @@
 # January
 
-This is a port and update of [January](http://january.cc/), originally created by [Disasterpeace](http://disasterpeace.com/) aka [Richard Vreeland](http://www.richvreeland.com/). This version was written in Haxe by [STVR](https://twitter.com/stvr_tweets) ([Steve Richey](http://www.steverichey.com/)) and uses the [OpenFL](http://www.openfl.org/) and [HaxeFlixel](http://haxeflixel.com/) libraries.
+This is a port and update of [January](http://january.cc/), originally created by [Disasterpeace](http://disasterpeace.com/) aka [Richard Vreeland](http://www.richvreeland.com/). This version was written in Haxe by [STVR](https://twitter.com/stvr_tweets) ([Steve Richey](http://www.steverichey.com/)) and uses the [OpenFL](http://www.openfl.org/) and [HaxeFlixel](http://haxeflixel.com/) libraries. You can view the source code for the original project [here](https://github.com/richvreeland/january).
 
 ## Changes:
 

@@ -9,6 +9,8 @@ import flixel.util.FlxSave;
 
 class Reg
 {
+	static public var PS:PlayState;
+	
 	inline static private function GROUND_COLORS():Array<Int> {
 		return [ 0xffFAFAFA, 0xffF7F7F7, 0xffF2F2F2 ];
 	}

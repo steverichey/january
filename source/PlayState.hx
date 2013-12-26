@@ -11,18 +11,27 @@ import flixel.util.FlxMath;
 import flixel.util.FlxRandom;
 
 class PlayState extends FlxState {
+	public var autoPilot:Bool = false;
+	public var autoPilotMovement:String = "";
+	
 	private var _sky:FlxSprite;
 	private var _mountain:FlxSprite;
 	private var _backTrees:FlxTilemap;
 	private var _ground:FlxSprite;
-	private var _trees:FlxTilemap;
+	private var _trees:FlxSprite;
+	private var _player:Player;
 	
 	override public function create():Void {
 		#if !FLX_NO_MOUSE
 		FlxG.mouse.hide();
 		#end
 		
-		FlxG.watch.add( FlxG.mouse, "x" );
+		Reg.PS = this;
+		
+		FlxG.worldBounds.set( 0, 0, FlxG.width, FlxG.height );
+		
+		FlxG.sound.volume = 1;
+		FlxG.sound.playMusic( "ambience" );
 		
 		_sky = new FlxSprite(0, 0, "images/sky.png");
 		_sky.velocity.x = -2;
@@ -49,9 +58,9 @@ class PlayState extends FlxState {
 		_ground.pixels.draw( new BitmapData( FlxG.width, 2, false, 0xffFCFCFC ) );
 		Reg.addNoiseTo( _ground, 2 );
 		
-		_trees = new FlxTilemap();
-		//_triees.loadMap(
-		_trees.y = FlxG.height - 23;
+		_trees = new FlxSprite( 0, FlxG.height - 27, "images/trees.png" );
+		
+		_player = new Player();
 		
 		// Add everything to the state
 		
@@ -59,6 +68,8 @@ class PlayState extends FlxState {
 		add( _mountain );
 		add( _backTrees );
 		add( _ground );
+		add( _trees );
+		add( _player );
 		
 		super.create();
 	}

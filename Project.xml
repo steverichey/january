@@ -17,8 +17,14 @@
 	<!--You can use rename="newName" to shorten the paths to the individual subdirectories!-->
 	<assets path="assets/fonts/frucade.ttf" rename="frucade" />
 	<assets path="assets/images" rename="images" />
-	<assets path="assets/maps" rename="maps" />
-	<assets path="assets/sounds" rename="sounds" />
+	
+	<assets path="assets/sounds" if="flash">
+		<sound path="ambience.mp3" id="ambience"/>
+	</assets>
+	
+	<assets path="assets/sounds" unless="flash">
+		<sound path="ambience.ogg" id="ambience"/>
+	</assets>
 	
 	<haxelib name="openfl" />
 	<haxelib name="flixel"/>

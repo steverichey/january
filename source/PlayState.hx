@@ -11,10 +11,12 @@ import flixel.tile.FlxTilemap;
 import flixel.ui.FlxButton;
 import flixel.util.FlxMath;
 import flixel.util.FlxRandom;
+import flixel.util.FlxTimer;
 
 class PlayState extends FlxState {
 	public var autoPilot:Bool = false;
 	public var autoPilotMovement:String = "";
+	public var spawnRate:Float = SHOWER;
 	
 	private var _sky:FlxSprite;
 	private var _mountain:FlxSprite;
@@ -23,6 +25,11 @@ class PlayState extends FlxState {
 	private var _trees:FlxSprite;
 	private var _player:Player;
 	private var _snow:FlxTypedGroup<Snowflake>;
+	private var _snowTimer:FlxTimer;
+	
+	inline static private var BLIZZARD:Float = 0.050;
+	inline static private var SHOWER:Float = 0.250;
+	inline static private var FLURRY:Float = 1.0;
 	
 	override public function create():Void {
 		#if !FLX_NO_MOUSE
@@ -66,6 +73,10 @@ class PlayState extends FlxState {
 		
 		_player = new Player();
 		
+		_snow = new FlxTypedGroup<Snowflake>( 1000 );
+		_snowTimer = FlxTimer.recycle();
+		_snowTimer.run( spawnRate, spawnFlake, 0 );
+		
 		// Add everything to the state
 		
 		add( _sky );
@@ -74,6 +85,7 @@ class PlayState extends FlxState {
 		add( _ground );
 		add( _trees );
 		add( _player );
+		add( _snow );
 		
 		super.create();
 	}
@@ -98,6 +110,13 @@ class PlayState extends FlxState {
 		#end
 		
 		super.update();
+	}
+	
+	private function spawnFlake( t:FlxTimer ):Void {
+		var flakeX:Int = FlxRandom.intRanged( 0, FlxG.width );
+		var flakeY:Int = 0;
+		var flake:Snowflake = _snow.recycle( Snowflake, [ flakeX, flakeY ] );
+		flake.reset( flakeX, flakeY );
 	}
 	
 	private function onLick( Snow:FlxObject, PlayerObject:FlxObject ) {

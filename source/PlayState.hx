@@ -2,8 +2,10 @@ package;
 
 import flash.display.BitmapData;
 import flixel.FlxG;
+import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.FlxState;
+import flixel.group.FlxTypedGroup.FlxTypedGroup;
 import flixel.text.FlxText;
 import flixel.tile.FlxTilemap;
 import flixel.ui.FlxButton;
@@ -20,6 +22,7 @@ class PlayState extends FlxState {
 	private var _ground:FlxSprite;
 	private var _trees:FlxSprite;
 	private var _player:Player;
+	private var _snow:FlxTypedGroup<Snowflake>;
 	
 	override public function create():Void {
 		#if !FLX_NO_MOUSE
@@ -32,6 +35,7 @@ class PlayState extends FlxState {
 		
 		FlxG.sound.volume = 1;
 		FlxG.sound.playMusic( "ambience" );
+		FlxG.sound.music.fadeIn( 2 );
 		
 		_sky = new FlxSprite(0, 0, "images/sky.png");
 		_sky.velocity.x = -2;
@@ -75,6 +79,18 @@ class PlayState extends FlxState {
 	}
 	
 	override public function update():Void {
+		// Loop sky background
+		
+		if ( _sky.x < -716 ) {
+			_sky.x = 0;
+		}
+		
+		// Collision check
+		
+		if ( _player.tongueUp ) {
+			FlxG.overlap( _snow, _player, onLick );
+		}
+		
 		#if debug
 		if ( FlxG.keys.justReleased.R ) {
 			FlxG.resetState();
@@ -84,6 +100,9 @@ class PlayState extends FlxState {
 		super.update();
 	}
 	
+	private function onLick( Snow:FlxObject, PlayerObject:FlxObject ) {
+		trace( "lick" );
+	}
 	
 	override public function destroy():Void {
 		super.destroy();

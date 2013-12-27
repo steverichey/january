@@ -1,11 +1,13 @@
 package;
 
+import flash.Lib;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.util.FlxMath;
+import flixel.util.FlxRandom;
 
 class MenuState extends FlxState {
 	override public function create():Void {
@@ -37,6 +39,12 @@ class MenuState extends FlxState {
 		if ( FlxG.keys.justPressed.SPACE || FlxG.keys.justPressed.ENTER || FlxG.mouse.justPressed ) {
 			FlxG.switchState( new PlayState() );
 		}
+		
+		//#if debug
+		if ( FlxG.keys.justPressed.R ) {
+			FlxG.resetGame();
+		}
+		//#end
 		
 		super.update();
 	}	

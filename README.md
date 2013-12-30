@@ -12,7 +12,7 @@ This is a port and update of [January](http://january.cc/), originally created b
 * Trees, mountain, and ground texture is randomized.
 * Fullscreen support.
 
-This version of January, as well as the original, are made available under a [GNU GPL v2](http://www.gnu.org/licenses/gpl-2.0.html)
+This version of January, as well as the original, are made available under a [GNU GPL v2](http://www.gnu.org/licenses/gpl-2.0.html) license.
 
 ## Original Readme:
 

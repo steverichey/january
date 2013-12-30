@@ -10,6 +10,8 @@ This is a port and update of [January](http://january.cc/), originally created b
 * Trees, mountain, and ground texture is randomized.
 * Fullscreen support.
 
+This version of January, as well as the original, are made available under a [GNU GPL v2](http://www.gnu.org/licenses/gpl-2.0.html)
+
 ## Original Readme:
 
 January is a generative music tool. You walk around and lick snowflakes with your tongue, and the tool uses a set of rules to make choices about what the next note (or notes) will be. It also gives the player freedom to play various types of chords, and choose when and how notes will be played. There are a bunch of advanced features, which you can explore below. It was made with [Flixel](http://www.flixel.org) and Flash/AS3. Feel free to shoot me an e-mail if you'd like to know more.

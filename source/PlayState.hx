@@ -120,7 +120,7 @@ class PlayState extends FlxState {
 	}
 	
 	private function onLick( Snow:FlxObject, PlayerObject:FlxObject ) {
-		trace( "lick" );
+		Snow.kill();
 	}
 	
 	override public function destroy():Void {

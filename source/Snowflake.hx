@@ -4,13 +4,14 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.util.FlxMath;
 import flixel.util.FlxPoint;
+import flixel.util.FlxRandom;
 
 class Snowflake extends FlxSprite {
 	private var wind:FlxPoint;
 	
 	public function new( X:Float, Y:Float ) {
 		super( X, Y );
-		makeGraphic( 1, 1 );
+		makeGraphic( 1, 1, FlxRandom.color( 223, 255 ) );
 		wind = new FlxPoint( 0, 0 );
 	}
 	

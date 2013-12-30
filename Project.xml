@@ -29,6 +29,8 @@
 	<haxelib name="openfl" />
 	<haxelib name="flixel"/>
 	
+	<haxeflag name="-D swf-script-timeout" value="60" />
+	
 	<!--In case you want to use the addons package-->
 	<!--<haxelib name="flixel-addons" />-->
 	
@@ -41,7 +43,7 @@
 	<!--<haxedef name="NAPE_RELEASE_BUILD" />--> 
 	
 	<!--Enable the flixel core recording system-->
-	<!--<haxedef name="FLX_RECORD" />-->
+	<haxedef name="FLX_RECORD" />
 	
 	<!--Enable right and middle click support for the mouse. Flash player version 11.2+, no HTML5 support -->
 	<!--<haxedef name="FLX_MOUSE_ADVANCED" />-->

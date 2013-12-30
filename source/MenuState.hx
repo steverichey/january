@@ -6,6 +6,8 @@ import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
+import flixel.util.FlxArrayUtil;
+import flixel.util.FlxBitmapUtil;
 import flixel.util.FlxMath;
 import flixel.util.FlxRandom;
 
@@ -40,11 +42,11 @@ class MenuState extends FlxState {
 			FlxG.switchState( new PlayState() );
 		}
 		
-		//#if debug
+		#if debug
 		if ( FlxG.keys.justPressed.R ) {
 			FlxG.resetGame();
 		}
-		//#end
+		#end
 		
 		super.update();
 	}	

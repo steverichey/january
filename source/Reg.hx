@@ -6,6 +6,7 @@ import flash.geom.Matrix;
 import flixel.FlxSprite;
 import flixel.util.FlxRandom;
 import flixel.util.FlxSave;
+import flixel.util.FlxSpriteUtil;
 
 class Reg
 {
@@ -31,6 +32,8 @@ class Reg
 	}
 	
 	static public function drawMountain():Sprite {
+		FlxSpriteUtil.
+		
 		var sprite:Sprite = new Sprite();
 		
 		sprite.graphics.beginFill( 0xffCDD5D7 );

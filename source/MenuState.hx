@@ -16,13 +16,13 @@ class MenuState extends FlxState {
 		FlxG.cameras.bgColor = 0xff75899C;
 		#if !FLX_NO_MOUSE
 		FlxG.mouse.load( "images/cursor.png", 3 );
-		FlxG.mouse.show();
+		FlxG.mouse.visible = true;
 		#end
 		
 		FlxG.autoPause = false;
 		
 		var title:FlxSprite = new FlxSprite( 0, 10 );
-		title.loadGraphic( "images/title.png", true, false, 164, 42 );
+		title.loadGraphic( "images/title.png", true, 164, 42 );
 		title.x = ( FlxG.width - title.width ) / 2;
 		title.animation.add( "idle", [0, 1, 2, 3], 6, true );
 		title.animation.play( "idle" );

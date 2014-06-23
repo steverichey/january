@@ -20,7 +20,9 @@ class Player extends FlxSprite {
 	
 	public function new() {
 		super( X_INIT, Y_INIT );
-		loadGraphic( "images/player.png", true, true, 16, 33 );
+		loadGraphic( "images/player.png", true, 16, 33 );
+		setFacingFlip(FlxObject.LEFT, true, false);
+		setFacingFlip(FlxObject.RIGHT, false, false);
 		
 		width = 10;
 		height = 3;
@@ -61,7 +63,7 @@ class Player extends FlxSprite {
 			facing = FlxObject.RIGHT;
 			//Snowflake.timbre = "Primary";
 			velocity.x = maxVelocity.x;
-		} else if ( FlxG.keyboard.anyJustReleased( [ "LEFT", "RIGHT", "A", "D" ] ) || ( Reg.PS.autoPilot && Reg.PS.autoPilotMovement == "still" ) ) {
+		} else if ( FlxG.keys.anyJustReleased( [ "LEFT", "RIGHT", "A", "D" ] ) || ( Reg.PS.autoPilot && Reg.PS.autoPilotMovement == "still" ) ) {
 			drag.x = 100;
 			stopped = true;
 		}
@@ -75,16 +77,16 @@ class Player extends FlxSprite {
 				animation.play( "walk" );
 			}
 			
-			if ( FlxG.keyboard.anyPressed( [ "UP", "W" ] ) ) {
+			if ( FlxG.keys.anyPressed( [ "UP", "W" ] ) ) {
 				tongueUp = true;
-			} else if ( FlxG.keyboard.anyPressed( [ "DOWN", "S" ] ) ) {
+			} else if ( FlxG.keys.anyPressed( [ "DOWN", "S" ] ) ) {
 				tongueUp = false;
 			}
 		} else {
-			if ( tongueUp && FlxG.keyboard.anyPressed( [ "DOWN", "S" ] ) ) {
+			if ( tongueUp && FlxG.keys.anyPressed( [ "DOWN", "S" ] ) ) {
 				animation.play( "tongueDown" );
 				tongueUp = false;
-			} else if ( !tongueUp && FlxG.keyboard.anyPressed( [ "UP", "W" ] ) ) {
+			} else if ( !tongueUp && FlxG.keys.anyPressed( [ "UP", "W" ] ) ) {
 				animation.play( "tongueUp" );
 				tongueUp = true;
 			}

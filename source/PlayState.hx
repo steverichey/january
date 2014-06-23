@@ -33,7 +33,7 @@ class PlayState extends FlxState {
 	
 	override public function create():Void {
 		#if !FLX_NO_MOUSE
-		FlxG.mouse.hide();
+		FlxG.mouse.visible = false;
 		#end
 		
 		Reg.PS = this;
@@ -74,8 +74,7 @@ class PlayState extends FlxState {
 		_player = new Player();
 		
 		_snow = new FlxTypedGroup<Snowflake>( 1000 );
-		_snowTimer = FlxTimer.recycle();
-		_snowTimer.run( spawnRate, spawnFlake, 0 );
+		_snowTimer = new FlxTimer( spawnRate, spawnFlake, 0);
 		
 		// Add everything to the state
 		

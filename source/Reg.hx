@@ -32,7 +32,7 @@ class Reg
 	}
 	
 	static public function drawMountain():Sprite {
-		FlxSpriteUtil.
+		//FlxSpriteUtil.
 		
 		var sprite:Sprite = new Sprite();
 		
